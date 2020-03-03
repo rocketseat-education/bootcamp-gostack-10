@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import PropTypes from 'prop-types';
 
 import api from '~/services/api';
 
@@ -49,15 +48,8 @@ export default function SelectProvider({ navigation }) {
   );
 }
 
-SelectProvider.navigationOptions = ({ navigation }) => ({
-  title: 'Selecione o prestador',
-  headerLeft: () => (
-    <TouchableOpacity
-      onPress={() => {
-        navigation.navigate('Dashboard');
-      }}
-    >
-      <Icon name="chevron-left" size={20} color="#FFF" />
-    </TouchableOpacity>
-  ),
-});
+SelectProvider.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.shape,
+  }).isRequired,
+};
