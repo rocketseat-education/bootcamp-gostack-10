@@ -115,6 +115,7 @@ export default function createRouter(isSigned = false) {
         name="New"
         component={NewStack}
         options={{
+          unmountOnBlur: true,
           tabBarVisible: false,
           tabBarLabel: 'Agendar',
           tabBarIcon: ({ color }) => (
